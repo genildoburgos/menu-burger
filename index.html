@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 
     <title>Restaurante Menu</title>
@@ -11,7 +11,6 @@
 
 </head>
 <body>
-
     <div class="container-mensagens" id="container-mensagens"></div>
 
     <a class="botao-carrinho hidden" onclick="cardapio.metodos.abrirCarrinho(true)">
@@ -414,24 +413,9 @@
             <div class="container">
                 <div id="itensCarrinho" class="row mr-0 ml-0 hidden">
     
-                    <div class="col-12 item-carrinho">
-                        <div class="img-produto">
-                            <img src="./img/cardapio/burguers/Gramercy-Tavern-Burger-and-Kielbasa-Kit-6.4.21-72ppi-1x1-15.jpg" alt="">
-                        </div>
-                        <div class="dados-produto">
-                            <p class="tittle-produto"><b>Nome do produto</b></p>
-                            <p class="price-produto"><b>R$ 149,90</b></p>
-                        </div>
-                        <div class="add-carrinho">
-                            <span class="btn-menos"><i class="fas fa-minus"></i></span>
-                            <span class="add-numero-itens">0</i></span>
-                            <span class="btn-mais"><i class="fas fa-plus"></i></span>
-                            <span class="btn btn-remove"><i class="fas fa-times"></i></span>
-                        </div>
-                    </div>
+                    
 
                 </div>
-                
 
                 <div id="localEntrega" class="row mr-0 ml-0 hidden">
                     <div class="col-4">
@@ -518,7 +502,7 @@
 
                 </div>
         
-                <div id="resumoCarrinho" class="row mr-0 ml-0">
+                <div id="resumoCarrinho" class="row mr-0 ml-0 hidden">
                     <div class="col-12">
                         <p class="tittle-carrinho mt-4">
                             <b>Itens do pedido:</b>
@@ -578,7 +562,7 @@
                 <div class="container-total text-right mb-4">
                     <p class="mb-0">
                         <span>Subtotal:</span>
-                        <span id="lblSubTotal">R$ ,00</span>
+                        <span id="lblSubTotal">R$ 0,00</span>
                     </p>
                     <p class="mb-0 texto-entrega">
                         <span><i class="fas fa-motorcycle"></i> Entrega:</span>
@@ -586,21 +570,21 @@
                     </p>
                     <p class="mb-0 texto-total">
                         <span><b>Total: </b></span>
-                        <span class="valor-total" id="lblValorTotal"> <b>R$ 100,00</b></span>
+                        <span class="valor-total" id="lblValorTotal"> <b id="lblValorTotal">R$0,00</b></span>
                     </p>
                 </div>
 
-                <a id="btnEtapaPedido" class="btn btn-yellow float-right ">
+                <a onclick="cardapio.metodos.carregarEtapa(2)" id="btnEtapaPedido" class="btn btn-yellow float-right ">
                     Continuar
                 </a>
-                <a id="btnEtapaEndereco" class="btn btn-yellow float-right hidden">
+                <a onclick="cardapio.metodos.carregarEtapa(3)"" id="btnEtapaEndereco" class="btn btn-yellow float-right hidden">
                     Revisar pedido
                 </a>
                 <a id="btnEtapaResumo" class="btn btn-yellow float-right hidden">
                     Enviar pedido
                 </a>
 
-                <a id="btnEtapaVoltar" class="btn btn-white float-right mr-3 hidden">
+                <a onclick="cardapio.metodos.voltarEtapa()" id="btnEtapaVoltar" class="btn btn-white float-right mr-3 hidden">
                     Voltar
                 </a>
 
@@ -617,7 +601,6 @@
     <script type="text/javascript" src="./js/popper.min.js"></script>
     <script type="text/javascript" src="./js/dados.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>
-
 
 </body>
 </html>
