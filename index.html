@@ -23,7 +23,7 @@
     <section class="header">
         <div class="container">
             <nav class="navbar navbar-expand-lg pl-0 pr-0">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand">
                     <img src="./img/logo.png" width="160" class="img-logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown">
@@ -67,10 +67,10 @@
                             Aproveite nosso cardápio! Escolha o que desejar e receba em sua casa de forma rápida e segura. 
                         </p>
                         <div>
-                            <a class="btn btn-yellow mt-4 mr-3">
+                            <a href="#menu" class="btn btn-yellow mt-4 mr-3">
                                 ver cardápio
                             </a>
-                            <a href="#" class="btn btn-white btn-icon-left mt-4">
+                            <a href="#" id="btnLigar" class="btn btn-white btn-icon-left mt-4">
                                 <span class="icon-left">
                                     <i class="fa fa-phone"></i>
                                 </span>
@@ -78,13 +78,13 @@
                             </a>
                         </div>
                     </div>
-                    <a class="btn btn-sm btn-white btn-social mt-4 mr-3">
+                    <a href="https://www.instagram.com/" class="btn btn-sm btn-white btn-social mt-4 mr-3">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a class="btn btn-sm btn-white btn-social mt-4 mr-3">
+                    <a href="https://pt-br.facebook.com/" class="btn btn-sm btn-white btn-social mt-4 mr-3">
                         <i class="fab fa-facebook"></i>
                     </a>
-                    <a class="btn btn-sm btn-white btn-social mt-4 mr-3">
+                    <a id="btnWhats" href="#" target="_blank" class="btn btn-sm btn-white btn-social mt-4 mr-3">
                         <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
@@ -304,9 +304,9 @@
 
                     </div>
                     
-                    <a href="" class="btn btn-sm btn-white btn-social mr-3 active">1</a>
-                    <a href="" class="btn btn-sm btn-white btn-social mr-3">2</a>
-                    <a href="" class="btn btn-sm btn-white btn-social mr-3">3</a>
+                    <a id="btnDepoimento-1" onclick="cardapio.metodos.abrirDepoimentos(1)" class="btn btn-sm btn-white btn-social mr-3 active">1</a>
+                    <a id="btnDepoimento-2" onclick="cardapio.metodos.abrirDepoimentos(2)" class="btn btn-sm btn-white btn-social mr-3">2</a>
+                    <a id="btnDepoimento-3" onclick="cardapio.metodos.abrirDepoimentos(3)" class="btn btn-sm btn-white btn-social mr-3">3</a>
 
                 </div>
 
@@ -327,8 +327,7 @@
                             <div class="col-7">
                                 <span class="hint-title"><b>Reserva</b></span>
                                 <h1 class="title">
-                                    <b>
-                                        Quer reservar um<br>
+                                    <b>Quer reservar um<br>
                                         horário?
                                     </b>
                                 </h1>
@@ -336,7 +335,7 @@
                                     Mande uma mensagem clicando no botão abaixo<br>
                                     Reserve sua data e horário de forma simples e rápido.
                                 </p>
-                                <a href="" class="btn btn-yellow mt-4">
+                                <a href="#" id="btnReserva" target="_blank" class="btn btn-yellow mt-4">
                                     Fazer reserva
                                 </a>
                             </div>
@@ -373,13 +372,13 @@
                 </div>
 
                 <div class="col-3 container-redes-footer">
-                    <a class="btn btn-sm btn-white btn-social mr-3">
+                    <a href="https://www.instagram.com/" class="btn btn-sm btn-white btn-social mr-3">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a class="btn btn-sm btn-white btn-social mr-3">
+                    <a href="https://pt-br.facebook.com/" class="btn btn-sm btn-white btn-social mr-3">
                         <i class="fab fa-facebook"></i>
                     </a>
-                    <a class="btn btn-sm btn-white btn-social">
+                    <a id="btnWhats2" href="#" target="_blank" class="btn btn-sm btn-white btn-social">
                         <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
@@ -563,7 +562,7 @@
                 <a onclick="cardapio.metodos.resumoPedido()" id="btnEtapaEndereco" class="btn btn-yellow float-right hidden">
                     Revisar pedido
                 </a>
-                <a id="btnEtapaResumo" class="btn btn-yellow float-right hidden">
+                <a href="#" target="_blank" id="btnEtapaResumo" class="btn btn-yellow float-right hidden">
                     Enviar pedido
                 </a>
 
