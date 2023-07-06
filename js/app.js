@@ -604,7 +604,7 @@ cardapio.templates = {
 
 
     item: `
-    <div class="col-3 mb-5">
+    <div class="col-3 mb-5 wow fadeInUp">
     <div class="card card-item" id="\${id}">
         <div class="img-produto">
             <img src="\${img}" >
