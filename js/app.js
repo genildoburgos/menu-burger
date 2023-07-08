@@ -604,7 +604,7 @@ cardapio.templates = {
 
 
     item: `
-    <div class="col-3 mb-5 wow fadeInUp">
+    <div class="col-12 col-lg-3 col-md-3 col-sm-6 mb-5 wow fadeInUp">
     <div class="card card-item" id="\${id}">
         <div class="img-produto">
             <img src="\${img}" >
@@ -614,7 +614,7 @@ cardapio.templates = {
         </p>
         <p class="price-produto text-center">
             <b>R$\${valor}</b>
-        </p>
+        </p> 
         <div class="add-carrinho">
             <span class="btn-menos" onclick="cardapio.metodos.diminuirQuantidade('\${id}')"><i class="fas fa-minus"></i></span>
             <span class="add-numero-itens" id="qntd-\${id}">0</i></span>
@@ -637,7 +637,7 @@ cardapio.templates = {
         <span class="btn-menos" onclick="cardapio.metodos.diminuirQuantidadeCarrinho('\${id}')"><i class="fas fa-minus"></i></span>
         <span class="add-numero-itens" id="qntd-carrinho-\${id}">\${qntd}</i></span>
         <span class="btn-mais" onclick="cardapio.metodos.aumentarQuantidadeCarrinho('\${id}')"><i class="fas fa-plus"></i></span>
-            <span class="btn btn-remove" onclick="cardapio.metodos.removerItemCarrinho('\${id}')"><i class="fas fa-times"></i></span>
+            <span class="btn btn-remove no-mobile" onclick="cardapio.metodos.removerItemCarrinho('\${id}')"><i class="fas fa-times"></i></span>
         </div>
     </div>
     `,
