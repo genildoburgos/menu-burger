@@ -1,0 +1,21 @@
+self.addEventListener('install', (e) => {
+  e.waitUntil(
+    caches.open('burger-menu-cache').then((cache) => {
+      return cache.addAll([
+        '/',
+        '/index.html',
+        '/css/styles.css',   // Altere os caminhos conforme a estrutura do seu projeto
+        '/img/icon-192.png',
+        '/img/icon-512.png'
+      ]);
+    })
+  );
+});
+
+self.addEventListener('fetch', (e) => {
+  e.respondWith(
+    caches.match(e.request).then((response) => {
+      return response || fetch(e.request);
+    })
+  );
+});
