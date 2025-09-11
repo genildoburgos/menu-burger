@@ -1,11 +1,11 @@
 {
-  "name": "Menu Burger Genildo",
-  "short_name": "BurgerMenu",
+  "name": "Menu Express",
+  "short_name": "MenuExpress",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#ffcc00",
-  "description": "Menu do Burger Genildo",
+  "description": "Menu Express - Cardápio Digital para Restaurantes",
   "icons": [
     {
       "src": "/img/icon-192.png",
