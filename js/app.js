@@ -9,16 +9,16 @@ var MEU_ENDERECO = null;
 
 var VALOR_CARRINHO = 0;
 
-var VALOR_ENTREGA = 5;
+var VALOR_ENTREGA = 0;
 
-var CELULAR_EMPRESA =  '5587991313696';
+var CELULAR_EMPRESA =  '5587996158316';
 
 cardapio.eventos ={
 
     init: () =>  {
         cardapio.metodos.obterItensCardapio();
         cardapio.metodos.carregarBotaoLigar();
-        cardapio.metodos.carregarBotaoReserva();
+        //cardapio.metodos.carregarBotaoReserva();
         cardapio.metodos.carregarWhatsapp();
     }
 
@@ -27,7 +27,7 @@ cardapio.eventos ={
 cardapio.metodos ={
 
     // obtem a lista de itens do cardápio
-    obterItensCardapio: (categoria= 'burgers', vermais = false) => {
+    obterItensCardapio: (categoria= 'almocos', vermais = false) => {
 
         var filtro = MENU[categoria];
 
@@ -374,7 +374,7 @@ cardapio.metodos ={
                     $('#txtEderenco').val(dados.logradoro);
                     $('#txtBairro').val(dados.bairro);
                     $('#txtCidade').val(dados.localidade);
-                    $('#ddlUf').val(dados.uf);
+                    // $('#ddlUf').val(dados.uf);
                     $('#txtNumero').focus();
 
                 }
@@ -407,7 +407,7 @@ cardapio.metodos ={
         let endereco = $('#txtEndereco').val().trim();
         let bairro = $('#txtBairro').val().trim();
         let cidade = $('#txtCidade').val().trim();
-        let uf = $('#ddlUf').val().trim();
+        // let uf = $('#ddlUf').val().trim();
         let numero = $('#txtNumero').val().trim();
         let complemento = $('#txtComplemento').val().trim();
 
@@ -435,11 +435,11 @@ cardapio.metodos ={
             return;
         }
 
-        if(uf == -1){
-            cardapio.metodos.mensagem('Informe a UF, por favor.')
-            $('#ddlUf').focus();
-            return;
-        }
+        // if(uf == -1){
+        //     cardapio.metodos.mensagem('Informe a UF, por favor.')
+        //     $('#ddlUf').focus();
+        //     return;
+        // }
 
         if(numero.length <= 0){
             cardapio.metodos.mensagem('Informe o número, por favor.')
@@ -452,7 +452,7 @@ cardapio.metodos ={
             endereco: endereco,
             bairro: bairro,
             cidade: cidade,
-            uf: uf,
+            // uf: uf,
             numero: numero,
             complemento: complemento
         }
@@ -480,7 +480,7 @@ cardapio.metodos ={
         });
 
         $('#resumoEndereco').html(`${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.bairro}`);
-        $('#cidadeEndereco').html(`${MEU_ENDERECO.cidade}-${MEU_ENDERECO.uf} / ${MEU_ENDERECO.cep} ${MEU_ENDERECO.complemento}`);
+        $('#cidadeEndereco').html(`${MEU_ENDERECO.cidade} / ${MEU_ENDERECO.cep} ${MEU_ENDERECO.complemento}`);
 
         cardapio.metodos.finaliazrPedido();
     },
@@ -494,8 +494,8 @@ cardapio.metodos ={
             texto += `\n*Itens do pedido:* \n\n\${itens}`;
             texto += '\n*Endereço de entrega:*'
             texto += `\n${MEU_ENDERECO.endereco}, ${MEU_ENDERECO.numero}, ${MEU_ENDERECO.bairro}` 
-            texto += `\n${MEU_ENDERECO.cidade}-${MEU_ENDERECO.uf} / ${MEU_ENDERECO.cep} ${MEU_ENDERECO.complemento}`
-            texto += `\n\n *Total (com entrega): R$ ${(VALOR_CARRINHO + VALOR_ENTREGA).toFixed(2).replace('.', ',')}*`
+            texto += `\n${MEU_ENDERECO.cidade} / ${MEU_ENDERECO.cep} ${MEU_ENDERECO.complemento}`
+            texto += `\n\n *Total: R$ ${(VALOR_CARRINHO + VALOR_ENTREGA).toFixed(2).replace('.', ',')}*`
 
 
             var itens = '';
@@ -526,40 +526,40 @@ cardapio.metodos ={
 
     },
 
-    // carrega o link do botão reserva
-    carregarBotaoReserva:()=>{
+    // // carrega o link do botão reserva
+    // carregarBotaoReserva:()=>{
 
-        var texto = 'Olá gostaria de fazer uma *reserva*';
+    //     var texto = 'Olá gostaria de fazer uma *reserva*';
 
-        let encode = encodeURI(texto);
+    //     let encode = encodeURI(texto);
 
-        let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`;
+    //     let URL = `https://wa.me/${CELULAR_EMPRESA}?text=${encode}`;
 
-        $('#btnReserva').attr('href', URL);
+    //     $('#btnReserva').attr('href', URL);
 
-    },
+    // },
 
-    carregarBotaoLigar: ()=> {
+    // carregarBotaoLigar: ()=> {
 
-        $('#btnLigar').attr('href', `tel:${CELULAR_EMPRESA}`);
+    //     $('#btnLigar').attr('href', `tel:${CELULAR_EMPRESA}`);
 
-    },
+    // },
 
-    // abre o depoimento
-    abrirDepoimentos: (depoimento)=>{
+    // // abre o depoimento
+    // abrirDepoimentos: (depoimento)=>{
 
 
-        $('#depoimento-1').addClass('hidden');
-        $('#depoimento-2').addClass('hidden');
-        $('#depoimento-3').addClass('hidden');
-        $('#btnDepoimento-1').removeClass('active');
-        $('#btnDepoimento-2').removeClass('active');
-        $('#btnDepoimento-3').removeClass('active');
+    //     $('#depoimento-1').addClass('hidden');
+    //     $('#depoimento-2').addClass('hidden');
+    //     $('#depoimento-3').addClass('hidden');
+    //     $('#btnDepoimento-1').removeClass('active');
+    //     $('#btnDepoimento-2').removeClass('active');
+    //     $('#btnDepoimento-3').removeClass('active');
 
-        $('#depoimento-' + depoimento).removeClass('hidden');
-        $('#btnDepoimento-' + depoimento).addClass('active');
+    //     $('#depoimento-' + depoimento).removeClass('hidden');
+    //     $('#btnDepoimento-' + depoimento).addClass('active');
 
-    },
+    // },
 
     carregarWhatsapp:()=> {
 
